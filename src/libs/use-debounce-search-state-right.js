@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { searchCharacter } from "../fake-api";
 import {debounce} from "lodash"
 
-const DEBOUNCE_DELAY = 5000;
+const DEBOUNCE_DELAY = 1000;
 
 // Debounced correctly, using just useState() and useEffect(), and useRef()
 export function useDebounceSearchRight(query) {
@@ -10,8 +10,8 @@ export function useDebounceSearchRight(query) {
     const debouncedSearch = useRef()
 
     useEffect(() => {
-        debouncedSearch.current = debounce(async () => {
-            const searchResults = await searchCharacter(query);
+        debouncedSearch.current = debounce(async (query) => {
+            const searchResults = await searchCharacter(query);            
             setResults(searchResults)
         }, DEBOUNCE_DELAY)
     }, [])

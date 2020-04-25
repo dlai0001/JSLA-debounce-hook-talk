@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import './App.css';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
+import initialData from './got'
 import { useSearchState } from './libs/use-search-state';
 import { useDebounceSearchWrong } from './libs/use-debounce-search-state-wrong';
 import { useDebounceSearchRight } from './libs/use-debounce-search-state-right';
@@ -13,6 +14,8 @@ function App() {
   // const results = useDebounceSearchWrong(query);
   const results = useDebounceSearchRight(query);
 
+  const displayResults = query.length > 0 ? results : initialData.characters
+
   const updateQuery = (evt => {
     setQuery(evt.target.value)
   })
@@ -24,10 +27,10 @@ function App() {
       Visit JSLA at <a href="https://js.la/">https://js.la/</a>.
       <div>
       <h2 className="subtitle">Search GOT characters</h2>
-        <input class="input is-info" type="text" placeholder="Enter character name here." value={query} onChange={updateQuery}></input>
+        <input className="input is-info" type="text" placeholder="Enter character name here." value={query} onChange={updateQuery}></input>
         <div >
           {
-            results.map(x => <CharacterBlurb character={x} key={x.id}/>)
+            displayResults.map(x => <CharacterBlurb character={x} key={x.id}/>)
           }
         </div>
       </div>

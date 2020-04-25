@@ -3,7 +3,7 @@ import gotData from "./got"
 const DELAY = 2000
 
 export function searchCharacter(query) {
-    console.log("API: search api called")
+    console.log("API: search api called with query:", query)
     return new Promise(resolve => {
         setTimeout(() => {
             console.log("API: resolving search results")
