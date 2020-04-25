@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import './App.css';
 import 'react-bulma-components/dist/react-bulma-components.min.css';
 import { useSearchState } from './libs/use-search-state';
-import { useDebounceSearchWrong } from './libs/with-debounce-state-wrong';
-import { useDebounceSearchRight } from './libs/with-debounce-state-right';
+import { useDebounceSearchWrong } from './libs/use-debounce-search-state-wrong';
+import { useDebounceSearchRight } from './libs/use-debounce-search-state-right';
 
 
 function App() {

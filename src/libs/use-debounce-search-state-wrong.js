@@ -9,7 +9,6 @@ export function useDebounceSearchWrong(query) {
     const [results, setResults] = useState([]);    
 
     const debouncedSearch = debounce(async () => {
-        console.log('debounced search called')
         const searchResults = await searchCharacter(query);
         setResults(searchResults)
     }, DEBOUNCE_DELAY)

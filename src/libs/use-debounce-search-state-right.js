@@ -11,9 +11,7 @@ export function useDebounceSearchRight(query) {
 
     useEffect(() => {
         debouncedSearch.current = debounce(async () => {
-            console.log('debounced search called')
             const searchResults = await searchCharacter(query);
-            console.log('debounced setting results')
             setResults(searchResults)
         }, DEBOUNCE_DELAY)
     }, [])
