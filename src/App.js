@@ -46,7 +46,7 @@ function CharacterBlurb(props) {
       <article className="media">
         <div className="media-left">
           <figure className="image is-64x64">
-            {character.characterImageThumb && <img src={character.characterImageThumb} alt="Image" />}
+            {character.characterImageThumb && <img src={character.characterImageThumb}/>}
           </figure>
         </div>
         <div className="media-content">
