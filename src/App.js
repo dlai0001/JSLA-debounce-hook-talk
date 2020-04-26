@@ -24,7 +24,7 @@ function App() {
     <div className="container">
       <h1 className="title">JSLA Talks</h1>
       <h2 className="subtitle">Building a Debounced Search As You Type</h2>
-      Visit JSLA at <a href="https://js.la/">https://js.la/</a>.
+      Visit Javascript LA at <a href="https://javascriptla.net/">https://javascriptla.net/</a>.
       <div>
       <h2 className="subtitle">Search GOT characters</h2>
         <input className="input is-info" type="text" placeholder="Enter character name here." value={query} onChange={updateQuery}></input>
